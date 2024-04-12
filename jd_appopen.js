@@ -3,21 +3,20 @@
 hostname = api.m.jd.com
 ===========Surge=================
 [Script]
-jd_appopen = type=http-request,pattern=^https:\/\/api\.m\.jd\.com\/appPublishUpgrade, max-size=0, script-path=jd_appopen.js
+jd_appopen = type=http-request,pattern=^https:\/\/api\.m\.jd\.com\/api\/appPublishUpgrade, max-size=0, script-path=jd_appopen.js
 ===================Quantumult X=====================
 [rewrite_local]
 # jd_appopen
-^https:\/\/api\.m\.jd\.com\/appPublishUpgrade url script-request-header jd_appopen.js
+^https:\/\/api\.m\.jd\.com\/api\/appPublishUpgrade url script-request-header jd_appopen.js
 =====================Loon=====================
 [Script]
-http-request ^https:\/\/api\.m\.jd\.com\/appPublishUpgrade script-path=jd_appopen.js, timeout=3600, tag=jd_appopen
+http-request ^https:\/\/api\.m\.jd\.com\/api\/appPublishUpgrade script-path=jd_appopen.js, timeout=3600, tag=jd_appopen
 */
 
 const $ = new Env("app_open")
 
 if ($request.headers) {
     let cookie = ($request.headers.Cookie || $request.headers['Cookie'] || $request.headers['cookie'] || '')
-    $.msg('test')
     let pt_key = cookie.match(/(pt_key=[^;]*)/)[1]
     let pt_pin = cookie.match(/(pt_pin=[^;]*)/)[1]
     if (pt_key && pt_pin) {
