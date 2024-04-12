@@ -16,6 +16,7 @@ http-request ^https:\/\/api\.m\.jd\.com\/api\/appPublishUpgrade script-path=jd_a
 const $ = new Env("app_open")
 
 if ($request.headers) {
+    $.msg('test')
     let cookie = ($request.headers.Cookie || $request.headers['Cookie'] || $request.headers['cookie'] || '')
     let pt_key = cookie.match(/(pt_key=[^;]*)/)[1]
     let pt_pin = cookie.match(/(pt_pin=[^;]*)/)[1]
