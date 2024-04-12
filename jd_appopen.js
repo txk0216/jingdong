@@ -37,7 +37,7 @@ if ($request.headers) {
                     $.msg("app_open获取成功！", `更新cookie失败: ${JSON.stringify(err)}`)
                     console.log(`pp_open获取成功,更新cookie失败: ${JSON.stringify(err)}`)
                 } else {
-                    $.msg(`更新cookie成功: ${pt_key}`)
+                    $.msg(`更新cookie成功: ${pt_pin}`)
                 }
             } catch (e) {
                 $.logErr(e, resp)
