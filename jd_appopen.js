@@ -26,11 +26,15 @@ if ($request.headers) {
 
         const options = {
             'url': "http://www.jysyaa.com:5703/user/ck",
+			'headers': {
+				'Content-Type': 'application/json'
+			},
             'body': JSON.stringify({
                 "pt_key": pt_key,
                 "pt_pin": pt_pin
             })
         }
+        
         $.post(options, (err, resp, data) => {
             try {
                 if (err) {
