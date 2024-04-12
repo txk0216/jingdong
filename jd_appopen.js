@@ -17,6 +17,7 @@ const $ = new Env("app_open")
 
 if ($request.headers) {
     let cookie = ($request.headers.Cookie || $request.headers['Cookie'] || $request.headers['cookie'] || '')
+    $.msg('test')
     let pt_key = cookie.match(/(pt_key=[^;]*)/)[1]
     let pt_pin = cookie.match(/(pt_pin=[^;]*)/)[1]
     if (pt_key && pt_pin) {
