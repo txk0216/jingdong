@@ -30,8 +30,8 @@ if ($request.headers) {
 		'Content-Type': 'application/json'
 	     },
             'body': JSON.stringify({
-                "pt_key": pt_key,
-                "pt_pin": pt_pin
+                "ck": `${pt_key};${pt_pin};`,
+                "remark": ''
             })
         }
         
