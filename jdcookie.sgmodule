@@ -1,0 +1,9 @@
+#!name=JDCookie
+#!desc=提交京东Cookie
+
+
+[MITM]
+hostname = api.m.jd.com
+
+[Script]
+jd_open = type=http-request,script-path=https://raw.githubusercontent.com/txk0216/jingdong/main/jd_appopen.js,pattern=^https:\/\/api\.m\.jd\.com\/api\/appPublishUpgrade,max-size=1048576,timeout=10,script-update-interval=10,enable=true
